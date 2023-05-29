@@ -3,8 +3,28 @@ import './App.css';
 
 function App() {
 
- const [result, setresult] = useState("")
- const onClickHandler = () =>{}
+ const [result, setResult] = useState("")
+ const onClickHandler = (event) =>{
+  let btnValue = event.target.innerText;
+    if (
+      ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."].includes(btnValue)
+    ) {
+      setResult(result + btnValue);
+    } else if (btnValue === "C" && result !== "") {
+      let tempResult = result.toString().slice(0, -1);
+      setResult(tempResult);
+    } else if (
+      ["/", "*", "+", "-", "%", "**"].includes(btnValue) &&
+      result !== ""
+    ) {
+      setResult(result + btnValue);
+    } else if (btnValue === "=") {
+      let tempres = eval(result);
+      setResult(tempres);
+    } else if (btnValue === "AC") {
+      setResult("");
+    }
+ }
 
   return (
     <div className="App">
