@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import InputText from "./InputText";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      
+        
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          ToDoList App
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Todo App with React Hooks</h1>
+      
+      
+      <InputText />
     </div>
   );
 }
