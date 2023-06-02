@@ -1,0 +1,45 @@
+{
+  "name": "blog-app-backend",
+  "version": "1.0.0",
+  "description": "Backend for a simple Blog app.",
+  "author": "William Lovo",
+  "license": "ISC",
+  "main": "./src/server.js",
+  "private": true,
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "debug": "DEBUG=blog-app-backend:* nodemon ./src/server.js",
+    "migrate": "sequelize db:migrate",
+    "seed": "sequelize db:seed:all",
+    "undo-migrate": "sequelize db:migrate:undo:all"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "config": "^3.2.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^2.6.9",
+    "dotenv": "^8.1.0",
+    "express": "^4.18.0",
+    "express-jwt": "^8.4.1",
+    "express-jwt-authz": "^2.4.1",
+    "express-validation": "^3.0.2",
+    "faker": "^4.1.0",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.15",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.0.0",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.0",
+    "sequelize-cli": "^5.5.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
+}

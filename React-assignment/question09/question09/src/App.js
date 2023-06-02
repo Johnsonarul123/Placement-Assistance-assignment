@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+
 
 function App() {
+  const [mode, setMode] = useState(false);
+
+  const onClickHandler = () => {
+    setMode(!mode);
+  };
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ background: `${mode ? "#111" : "#fff"}` }}>
+    <h1 style={{ color: `${mode ? "#fff" : "#111"}` }}>
+      {mode ? "Dark" : "Light"}
+    </h1>
+    <button
+      className="toggle"
+      onClick={onClickHandler}
+      style={{ background: `${mode ? "rgba(255,255,255,1)" : "#333"}` }}
+    >
+      <div
+        className="btn"
+        style={{
+          marginLeft: `${mode ? "53px" : "2px"}`,
+          background: `${mode ? "#333" : "#fff"}`
+        }}
+      />
+    </button>
+  </div>
     </div>
   );
 }
